@@ -1,14 +1,24 @@
 import React from 'react';
-import Navbar from './components/navbar';
+import Navbar from './components/navbar';  
+import ItemContainer from './components/itemcontainer';
+import produtos from './data';
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Navbar/>
-      <h1>Hello my brothers!</h1>
+    <div className="app">
+      <Navbar />
+      <main>
+        <h1>Produtos Disponíveis</h1>
+        <ItemContainer produtos={produtos} /> 
+      </main>
     </div>
   );
-}
+};
 
 export default App;
+
+
+
+
+
 
