@@ -5,7 +5,7 @@ const CardWidget = ({ produto }) => {
 
   // aqui estou adicinando a função de estoque (caso houver)
   const incrementar = () => {
-    if (produto.estoque === null || quantidade < produto.estoque) {
+    if (produto.estoque === undefined || quantidade < produto.estoque) {
       setQuantidade(quantidade + 1);
     }
   };
@@ -28,7 +28,7 @@ const CardWidget = ({ produto }) => {
         <button onClick={incrementar}>+</button>
       </div>
 
-      {produto.estoque !== null && quantidade >= produto.estoque && (
+      {produto.estoque !== undefined && quantidade >= produto.estoque && (
   <p className="estoque-limitado">
     Limite de estoque atingido! Temos apenas {produto.estoque} unidades em estoque.
   </p>
