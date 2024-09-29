@@ -9,6 +9,7 @@ const Navbar = () => {
         <li className="navbar-item"><a href="#hardwares" className="navbar-link">Hardwares</a></li>
         <li className="navbar-item"><a href="#periféricos" className="navbar-link">Periféricos</a></li>
         <li className="navbar-item"><a href="#gabinete" className="navbar-link">Gabinetes</a></li>
+        <span className="material-symbols-outlined">shopping_cart</span>
       </ul>
     </nav>
   );

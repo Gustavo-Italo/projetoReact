@@ -2,12 +2,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    padding: 2rem;
+    padding: 10rem;
   }
   
   .card-widget {
     border: 1px solid #ddd;
-    padding: 1rem;
+    padding: 3rem;
     width: 200px;
     text-align: center;
   }
@@ -20,17 +20,51 @@
   .price {
     font-size: 1.2rem;
     color: #f400f0;
+    margin: 0.5rem 0; 
+    position: relative;
+    top: -10px; /
+    
   }
   
-  .add-to-cart {
-    background-color: #000000ad;
-    border: none;
+  .contador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 0.2rem;
+    border-radius: 8px;
     color: white;
-    padding: 0.5rem;
-    cursor: pointer;
+    max-width: 150px;
+    margin: 0.5rem auto 0;
   }
   
-  .add-to-cart:hover {
+  .contador button {
+    background: transparent;
+    border: 1px solid white; 
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem; 
+    cursor: pointer;
+    padding: 0.3rem 0.8rem; 
+    margin: 0 0.3rem; 
+  }
+
+  .contador button:first-of-type {
+    background-color: #f400f0 ; 
+  }
+  
+  .contador button:last-of-type {
     background-color: #f400f0;
   }
+  
+  .contador span {
+    font-size: 1.2rem;
+    margin: 0 1rem;
+    text-align: center;
+  }
+
+.estoque-limitado {
+  color: white;
+}
+
   

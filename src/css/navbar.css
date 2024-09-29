@@ -28,7 +28,20 @@
   }
   
   .navbar-link:hover {
-    color: #f400f0
+    color: #f400f0;
+  }
+
+
+
+.material-symbols-outlined {
+    color: black;
+    cursor: pointer;
+    margin-left: 1rem; 
+  }
+
+
+  .material-symbols-outlined:hover {
+    color: #f400f0;
   }
   
 
