@@ -2,6 +2,27 @@ import React, { useState } from 'react';
 
 const CardWidget = ({ produto }) => {
   const [quantidade, setQuantidade] = useState(0);
+  const [descricaoVisivel, setDescricaoVisivel] = useState(false);
+  const [carregando, setCarregando] = useState(false);
+
+
+  const VerADescricao = () => {
+    if (descricaoVisivel) {
+      setDescricaoVisivel(false);
+  
+    } else {
+    
+      setCarregando(true);
+      new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, 2000); 
+      }).then(() => {
+        setDescricaoVisivel(true);
+        setCarregando(false); 
+      });
+    }
+  };
 
   // aqui estou adicinando a função de estoque (caso houver)
   const incrementar = () => {
@@ -33,6 +54,12 @@ const CardWidget = ({ produto }) => {
     Limite de estoque atingido! Temos apenas {produto.estoque} unidades em estoque.
   </p>
 )}
+
+  <button onClick={VerADescricao} disabled={carregando}>
+    {carregando ? 'carregando' : descricaoVisivel ? 'Esconder Visualização' : 'Visualizar Descrição'}
+  </button>
+
+  {descricaoVisivel && <p className='descricao-produto'>{produto.descricao}</p>}
     </div>
   );
 };
