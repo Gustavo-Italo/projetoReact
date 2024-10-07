@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/navbar';  
 import ItemContainer from './components/itemcontainer';
-import produtos from './data';
+import axios from 'axios';
 
 const App = () => {
+
+  const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    const fetchProdutos = async () => {
+        const response = await axios.get('https://api.mercadolibre.com/sites/MLB/search?q=gamers');
+        
+        const produtosData = response.data.results.map(produto => ({
+          id: produto.id, 
+          nome: produto.title,
+          preco: produto.price,
+          imagem: produto.thumbnail
+        }));
+        setProdutos(produtosData);
+        };
+        fetchProdutos().catch
+        }, []);
+
+
   return (
     <div className="app">
       <Navbar />
