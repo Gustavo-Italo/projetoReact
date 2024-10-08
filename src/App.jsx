@@ -22,7 +22,6 @@ const App = () => {
         fetchProdutos().catch
         }, []);
 
-
   return (
     <div className="app">
       <Navbar />
