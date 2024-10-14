@@ -1,15 +1,34 @@
 import React from 'react';
 import '../css/navbar.css';
+import { Link } from 'react-router-dom';
+import CartIcon from './cartIcon';
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <ul className="navbar-list">
-        <li className="navbar-item"><a href="#home" className="navbar-link">Home</a></li>
-        <li className="navbar-item"><a href="#hardwares" className="navbar-link">Hardwares</a></li>
-        <li className="navbar-item"><a href="#periféricos" className="navbar-link">Periféricos</a></li>
-        <li className="navbar-item"><a href="#gabinete" className="navbar-link">Gabinetes</a></li>
-        <span className="material-symbols-outlined">shopping_cart</span>
+        <li className="navbar-item">
+          <Link to="/" className="navbar-link">Home</Link>
+        </li>
+
+        <li className="navbar-item">
+          <Link to="/category/hardwares" className="navbar-link">Hardwares</Link>
+        </li>
+
+        <li className="navbar-item">
+          <Link to="/category/perifericos" className="navbar-link">Periféricos</Link>
+        </li>
+
+        <li className="navbar-item">
+          <Link to="/category/gabinetes" className="navbar-link">Gabinetes</Link>
+        </li>
+
+        <li className="navbar-item">
+          <Link to="/cart" className="navbar-link">
+            <CartIcon /> {/* Adicionando o ícone do carrinho */}
+          </Link>
+        </li>
+
       </ul>
     </nav>
   );

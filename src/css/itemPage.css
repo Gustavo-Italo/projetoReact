@@ -1,0 +1,49 @@
+.item-image {
+    width: 200px;
+    height: auto;
+  }
+
+.contador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 8px;
+    color: white;
+    max-width: 150px;
+    margin: 0.5rem auto 0;
+  }
+
+.contador button {
+    background: transparent;
+    border: 1px solid white; 
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem; 
+    cursor: pointer;
+    padding: 0.3rem 0.8rem; 
+    margin: 0 0.3rem; 
+  }
+
+.contador button:first-of-type {
+    background-color: #f400f0 ; 
+  }
+  
+  .contador button:last-of-type {
+    background-color: #f400f0;
+  }
+  
+.contador span {
+    font-size: 1.2rem;
+    margin: 0 1rem;
+    text-align: center;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: #f400f0;
+    margin: 0.5rem 0; 
+    position: relative;
+    top: -10px; /
+    
+}
