@@ -58,7 +58,7 @@ const ItemPage = () => {
         <button onClick={incrementar}>+</button>
       </div>
 
-      <button onClick={handleAddToCart}>Adiconar Ao Carrinho</button>
+      <button className='add-cart' onClick={handleAddToCart}>Adiconar Ao Carrinho</button>
     </div>
 
 

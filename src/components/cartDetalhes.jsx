@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from './cartContext';
 
 const CartDetails = () => {
-  const { cartItens, totalPrice } = useContext(CartContext);
+  const { cartItens, totalPrice, removerCart } = useContext(CartContext);
 
   return (
     <div className="cart-details">
@@ -16,6 +16,7 @@ const CartDetails = () => {
             <h4>{item.nome}</h4>
             <p>Quantidade: {item.quantidade}</p>
             <p>Preço: R${(item.preco * item.quantidade).toFixed(2)}</p>
+            <button className='remover-item' onClick={() => removerCart(item.id)}>Excluir</button>
           </div>
         ))
       )}
