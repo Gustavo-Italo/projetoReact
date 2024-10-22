@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { CartContext } from './cartContext';
 
 const CartIcon = () => {
@@ -7,7 +7,7 @@ const CartIcon = () => {
   return (
     <div className="cart-icon">
       <span className="material-symbols-outlined">shopping_cart</span>
-      <span>{totalItems} Itens - R${totalPrice.toFixed(2)}</span>
+      <span>{totalItems} R${totalPrice.toFixed(2)}</span>
     </div>
   );
 };

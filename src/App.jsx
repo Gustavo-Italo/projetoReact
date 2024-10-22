@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './components/navbar';  
 import ItemContainer from './components/itemcontainer';
 import axios from 'axios';

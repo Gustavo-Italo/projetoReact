@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import '../css/itemPage.css'
@@ -45,23 +45,23 @@ const ItemPage = () => {
   }
   
 
-  return (
+return (
     <div className="item-page">
-      <img src={produto.imagem} alt={produto.nome} />
-      <h1>{produto.nome}</h1>
-      <p>{produto.descricao}</p>
-      <span className="price">R${produto.preco.toFixed(2)}</span>
-
-      <div className="contador">
-        <button onClick={decrementar}>-</button>
-        <span>{quantidade}</span>
-        <button onClick={incrementar}>+</button>
+      <div className="product-details">
+        <img src={produto.imagem} alt={produto.nome} className="product-image" />
+        <div className="product-info">
+          <h1 className="product-name">{produto.nome}</h1>
+          <p className="product-description">{produto.descricao}</p>
+          <span className="price">R${produto.preco.toFixed(2)}</span>
+          <div className="contador">
+            <button onClick={decrementar}>-</button>
+            <span>{quantidade}</span>
+            <button onClick={incrementar}>+</button>
+          </div>
+          <button className="add-cart" onClick={handleAddToCart}>Adicionar ao Carrinho</button>
+        </div>
       </div>
-
-      <button className='add-cart' onClick={handleAddToCart}>Adiconar Ao Carrinho</button>
     </div>
-
-
   );
 };
 

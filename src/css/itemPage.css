@@ -1,7 +1,42 @@
 .item-image {
-    width: 200px;
-    height: auto;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.product-details {
+  display: flex;
+  gap: 2rem;
+  background-color: black;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid black;
+  width: 100%;
+  max-width: 900px;
+}
+
+.product-image {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 400px;
+  
+}
+
+.product-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
 
 .contador {
     display: flex;
@@ -16,20 +51,20 @@
 
 .contador button {
     background: transparent;
-    border: 1px solid white; 
+    border: none;
     border-radius: 5px;
     color: white;
-    font-size: 1.5rem; 
+    font-size: 1.2rem; 
     cursor: pointer;
-    padding: 0.3rem 0.8rem; 
-    margin: 0 0.3rem; 
+    padding: 0.4rem 1rem;
+    margin: 0 5px;
   }
 
 .contador button:first-of-type {
     background-color: #f400f0 ; 
   }
   
-  .contador button:last-of-type {
+.contador button:last-of-type {
     background-color: #f400f0;
   }
   
@@ -42,8 +77,18 @@
 .price {
     font-size: 1.2rem;
     color: #f400f0;
-    margin: 0.5rem 0; 
-    position: relative;
-    top: -10px; /
-    
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.add-cart {
+  background-color: #f400f0;
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 1rem;
 }

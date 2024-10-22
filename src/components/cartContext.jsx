@@ -1,4 +1,5 @@
-import React, { createContext, useState } from 'react';
+import { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const CartContext = createContext();
 
@@ -21,17 +22,33 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const removerCart = (produtoId) => {
-    setCartItens(cartItens.filter(item => item.id !== produtoId))
+  const removerDoCarrinho = (produtoId, quantidade) => {
+    const itemExists = cartItens.find(item => item.id === produtoId);
+    
+    if (itemExists) {
+      if (itemExists.quantidade > quantidade) {
+        setCartItens(cartItens.map(item =>
+          item.id === produtoId
+            ? { ...item, quantidade: item.quantidade - quantidade }
+            : item
+        ));
+      } else {
+        setCartItens(cartItens.filter(item => item.id !== produtoId));
+      }
+    }
   };
 
   const totalItens = cartItens.reduce((total, item) => total + item.quantidade, 0); 
   const totalPrice = cartItens.reduce((total, item) => total + item.preco * item.quantidade, 0);
 
   return (
-    <CartContext.Provider value={{ cartItens, addToCart, totalItens, totalPrice, removerCart }}>
+    <CartContext.Provider value={{ cartItens, addToCart, totalItens, totalPrice, removerDoCarrinho }}>
       {children}
     </CartContext.Provider>
   );
+};
+
+CartProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
